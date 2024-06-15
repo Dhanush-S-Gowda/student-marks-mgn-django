@@ -1,0 +1,157 @@
+{% extends "list.html" %}
+    {% block start %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1 class="text-center">Student Marks Management</h1>
+    <div class="card mx-auto p-3 m-3" style="width: 25rem">
+      <form class="row g-3 needs-validation mx-auto" method="post">
+        {% csrf_token %}
+        <div class="row-md-4">
+          <label for="validationCustom01" class="form-label"
+            >Student name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom01"
+            placeholder="Enter full name"
+            name="name"
+            required
+            {% if update_info %}
+            value = {{update_info.name}}
+            {% endif %}
+          />
+        </div>
+        <div class="row-md-4">
+          <label for="validationCustom01" class="form-label">Student ID</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom01"
+            placeholder="Enter Id"
+            name="std_id"
+            required
+            {% if update_info %}
+            value = {{update_info.std_id}}
+            {% endif %}
+          />
+        </div>
+        <div class="row-md-4">
+          <label for="validationCustom01" class="form-label"
+            >Subject 1 marks</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="validationCustom01"
+            name="sub1_marks"
+            step="0.01"
+            max="100"
+            min="0"
+            required
+            {% if update_info %}
+            value = {{update_info.sub1_marks}}
+            {% endif %}
+          />
+        </div>
+        <div class="row-md-4">
+          <label for="validationCustom01" class="form-label"
+            >Subject 2 marks</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="validationCustom01"
+            name="sub2_marks"
+            step="0.01"
+            max="100"
+            min="0"
+            required
+            {% if update_info %}
+            value = {{update_info.sub2_marks}}
+            {% endif %}
+          />
+        </div>
+        <div class="row-md-4">
+          <label for="validationCustom01" class="form-label"
+            >Subject 3 marks</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="validationCustom01"
+            name="sub3_marks"
+            step="0.01"
+            max="100"
+            min="0"
+            required
+            {% if update_info %}
+            value = {{update_info.sub3_marks}}
+            {% endif %}
+          />
+        </div>
+        <div class="row-md-4">
+          <label for="validationCustom01" class="form-label"
+            >Subject 4 marks</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="validationCustom01"
+            name="sub4_marks"
+            step="0.01"
+            max="100"
+            min="0"
+            required
+            {% if update_info %}
+            value = {{update_info.sub4_marks}}
+            {% endif %}
+          />
+        </div>
+        <div class="row-md-4">
+          <label for="validationCustom01" class="form-label"
+            >Subject 5 marks</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="validationCustom01"
+            name="sub5_marks"
+            step="0.01"
+            max="100"
+            min="0"
+            required
+            {% if update_info %}
+            value = {{update_info.sub5_marks}}
+            {% endif %}
+          />
+        </div>
+
+        <div class="row-12 mx-auto">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+    </div>
+
+     {% endblock %}
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+ 

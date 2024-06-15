@@ -1,0 +1,39 @@
+{% block start %}
+
+{% endblock %}
+<table class="table mx-auto p-3 m-3" style="width: 80%">
+    <thead>
+      <tr>
+        <th scope="col">Sl no.</th>
+        <th scope="col">Name</th>
+        <th scope="col">ID</th>
+        <th scope="col">Subject 1</th>
+        <th scope="col">Subject 2</th>
+        <th scope="col">Subject 3</th>
+        <th scope="col">Subject 4</th>
+        <th scope="col">Subject 5</th>
+        <th scope="col">Percentage</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in students %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ student.name }}</td>
+        <td>{{ student.std_id }}</td>
+        <td>{{ student.sub1_marks }}</td>
+        <td>{{ student.sub2_marks }}</td>
+        <td>{{ student.sub3_marks }}</td>
+        <td>{{ student.sub4_marks }}</td>
+        <td>{{ student.sub5_marks }}</td>
+        <td >{{ student.percentage }}</td>
+        <td>
+          <a href="/update/{{student.id}}" class='btn btn-warning'>Update</a>
+          <a href="/delete/{{student.id}}" class='btn btn-danger'>Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
